@@ -114,13 +114,14 @@ Here I have generated a 100 frame, 20 fps gif for each of the possible combinati
   - This is a ray traced video of ball100.ray.
 
   ![](kdrucia1_HTML\kdrucia1.art\kdrucia1.art.4.1.gif)
+  <img src="kdrucia1_HTML\kdrucia1.art\kdrucia1.art.4.1.gif" />
 
   #### Image Submission
 
   - This is a ray traced closeup of dog100.ray.
 
   ![](kdrucia1_HTML\kdrucia1.art\kdrucia1.art.4.2.bmp)
-
+  <img src="kdrucia1_HTML\kdrucia1.art\kdrucia1.art.4.2.bmp" />
   
 
 #### .ray and .key File Submissions
