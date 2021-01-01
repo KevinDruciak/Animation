@@ -1,0 +1,10 @@
+#camera  0 0 0  0 0 0  0 0 0  0
+
+#material  0 0 0  0.2 0.2 0.2  1 1 1  1 1 1 64  0 0 0  1.4  -1  !!
+
+#static_affine  0.2 0 0 0 0 0.26 0 0 0 0 0.125 0 0 0 0 1
+  #shape_list_begin
+    #shape_sphere  0  0 0 0  0.5
+    #shape_cylinder  0  0 0.5 0  0.5  1
+    #shape_sphere  0  0 1 0  0.5
+  #shape_list_end

@@ -1,0 +1,57 @@
+﻿  ckconfig.cpp
+  jcapimin.cpp
+  jcapistd.cpp
+  jccoefct.cpp
+  jccolor.cpp
+  jcdctmgr.cpp
+  jchuff.cpp
+  jcinit.cpp
+  jcmainct.cpp
+  jcmarker.cpp
+  jcmaster.cpp
+  jcomapi.cpp
+  jcparam.cpp
+  jcphuff.cpp
+  jcprepct.cpp
+  jcsample.cpp
+  jctrans.cpp
+  jdapimin.cpp
+  jdapistd.cpp
+  jdatadst.cpp
+  Generating Code...
+  Compiling...
+  jdatasrc.cpp
+  jdcoefct.cpp
+  jdcolor.cpp
+  jddctmgr.cpp
+  jdhuff.cpp
+  jdinput.cpp
+  jdmainct.cpp
+  jdmarker.cpp
+  jdmaster.cpp
+  jdmerge.cpp
+  jdphuff.cpp
+  jdpostct.cpp
+  jdsample.cpp
+  jdtrans.cpp
+  jerror.cpp
+  jfdctflt.cpp
+  jfdctfst.cpp
+  jfdctint.cpp
+  jidctflt.cpp
+  jidctfst.cpp
+  Generating Code...
+  Compiling...
+  jidctint.cpp
+  jidctred.cpp
+  jmemmgr.cpp
+c:\users\bakad\desktop\kdrucia1.4\assignments\jpeg\jmemmgr.cpp(306): warning C4267: '+=': conversion from 'size_t' to 'long', possible loss of data
+c:\users\bakad\desktop\kdrucia1.4\assignments\jpeg\jmemmgr.cpp(366): warning C4267: '+=': conversion from 'size_t' to 'long', possible loss of data
+c:\users\bakad\desktop\kdrucia1.4\assignments\jpeg\jmemmgr.cpp(976): warning C4267: '-=': conversion from 'size_t' to 'long', possible loss of data
+c:\users\bakad\desktop\kdrucia1.4\assignments\jpeg\jmemmgr.cpp(990): warning C4267: '-=': conversion from 'size_t' to 'long', possible loss of data
+  jmemnobs.cpp
+  jquant1.cpp
+  jquant2.cpp
+  jutils.cpp
+  Generating Code...
+  JPEG.vcxproj -> C:\Users\bakad\Desktop\kdrucia1.4\Assignments\.\JPEG.lib

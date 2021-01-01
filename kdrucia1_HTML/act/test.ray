@@ -1,0 +1,115 @@
+#camera  -1.88111 1.12615 3.75745  0.449492 -0.253421 -0.856583  0.082048 0.966573 -0.242909  0.523
+#light_point  0.2 0.2 0.2  1 1 1  1 1 1  -10 10 10  1 0 0
+#light_dir  0.2 0.2 0.2  0.6 0.6 0.6  0.6 0.6 0.6  0 0 1
+
+#ray_file  ../ray/stick.pelvis.ray
+#ray_file  ../ray/stick.upper_leg.ray
+#ray_file  ../ray/stick.lower_leg.ray
+#ray_file  ../ray/stick.foot.ray
+#ray_file  ../ray/stick.chest.ray
+#ray_file  ../ray/stick.left_shoulder.ray
+#ray_file  ../ray/stick.upper_arm.ray
+#ray_file  ../ray/stick.lower_arm.ray
+#ray_file  ../ray/stick.hand.ray
+#ray_file  ../ray/stick.right_shoulder.ray
+#ray_file  ../ray/stick.neck.ray
+#ray_file  ../ray/stick.head.ray
+#key_file  test.key
+
+#dynamic_affine  ROOT_NATURAL
+  #static_affine  0.443611 -0.885044 -0.14109 0 0.697311 0.439746 -0.566022 0 0.562998 0.15271 0.812227 0 0 0 0 1
+    #shape_list_begin
+      #ray_file_instance  0
+      #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 0.160202 -0.0265675 1
+        #dynamic_affine  Chest
+          #static_affine  0.443611 -0.885044 -0.14109 0 0.697311 0.439746 -0.566022 0 0.562998 0.15271 0.812227 0 0 0 0 1
+            #shape_list_begin
+              #ray_file_instance  4
+              #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 0.412859 0 1
+                #dynamic_affine  Neck
+                  #static_affine  0.443611 -0.885044 -0.14109 0 0.697311 0.439746 -0.566022 0 0.562998 0.15271 0.812227 0 0 0 0 1
+                    #shape_list_begin
+                      #ray_file_instance  10
+                      #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 0.0844846 0 1
+                        #dynamic_affine  Head
+                          #static_affine  0.443611 -0.885044 -0.14109 0 0.697311 0.439746 -0.566022 0 0.562998 0.15271 0.812227 0 0 0 0 1
+                            #ray_file_instance  11
+                    #shape_list_end
+              #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 -0.0185972 0.351754 -0.0270988 1
+                #dynamic_affine  RightCollar
+                  #static_affine  0.443611 -0.885044 -0.14109 0 0.697311 0.439746 -0.566022 0 0.562998 0.15271 0.812227 0 0 0 0 1
+                    #shape_list_begin
+                      #ray_file_instance  9
+                      #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 -0.163124 0 0 1
+                        #dynamic_affine  RightShoulder
+                          #static_affine  0.443611 -0.885044 -0.14109 0 0.697311 0.439746 -0.566022 0 0.562998 0.15271 0.812227 0 0 0 0 1
+                            #shape_list_begin
+                              #ray_file_instance  6
+                              #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 -0.335813 0 1
+                                #dynamic_affine  RightElbow
+                                  #static_affine  0.443611 -0.885044 -0.14109 0 0.697311 0.439746 -0.566022 0 0.562998 0.15271 0.812227 0 0 0 0 1
+                                    #shape_list_begin
+                                      #ray_file_instance  7
+                                      #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 -0.26 0 1
+                                        #dynamic_affine  RightWrist
+                                          #static_affine  0.443611 -0.885044 -0.14109 0 0.697311 0.439746 -0.566022 0 0.562998 0.15271 0.812227 0 0 0 0 1
+                                            #ray_file_instance  8
+                                    #shape_list_end
+                            #shape_list_end
+                    #shape_list_end
+              #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0.0185972 0.351754 -0.0270988 1
+                #dynamic_affine  LeftCollar
+                  #static_affine  0.443611 -0.885044 -0.14109 0 0.697311 0.439746 -0.566022 0 0.562998 0.15271 0.812227 0 0 0 0 1
+                    #shape_list_begin
+                      #ray_file_instance  5
+                      #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0.163124 0 0 1
+                        #dynamic_affine  LeftShoulder
+                          #static_affine  0.443611 -0.885044 -0.14109 0 0.697311 0.439746 -0.566022 0 0.562998 0.15271 0.812227 0 0 0 0 1
+                            #shape_list_begin
+                              #ray_file_instance  6
+                              #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 -0.335813 0 1
+                                #dynamic_affine  LeftElbow
+                                  #static_affine  0.443611 -0.885044 -0.14109 0 0.697311 0.439746 -0.566022 0 0.562998 0.15271 0.812227 0 0 0 0 1
+                                    #shape_list_begin
+                                      #ray_file_instance  7
+                                      #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 -0.26 0 1
+                                        #dynamic_affine  LeftWrist
+                                          #static_affine  0.443611 -0.885044 -0.14109 0 0.697311 0.439746 -0.566022 0 0.562998 0.15271 0.812227 0 0 0 0 1
+                                            #ray_file_instance  8
+                                    #shape_list_end
+                            #shape_list_end
+                    #shape_list_end
+            #shape_list_end
+      #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 -0.0690755 0 0 1
+        #dynamic_affine  RightHip
+          #static_affine  0.443611 -0.885044 -0.14109 0 0.697311 0.439746 -0.566022 0 0.562998 0.15271 0.812227 0 0 0 0 1
+            #shape_list_begin
+              #ray_file_instance  1
+              #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 -0.451913 0 1
+                #dynamic_affine  RightKnee
+                  #static_affine  0.443611 -0.885044 -0.14109 0 0.697311 0.439746 -0.566022 0 0.562998 0.15271 0.812227 0 0 0 0 1
+                    #shape_list_begin
+                      #ray_file_instance  2
+                      #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 -0.476089 0 1
+                        #dynamic_affine  RightAnkle
+                          #static_affine  0.443611 -0.885044 -0.14109 0 0.697311 0.439746 -0.566022 0 0.562998 0.15271 0.812227 0 0 0 0 1
+                            #ray_file_instance  3
+                    #shape_list_end
+            #shape_list_end
+      #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0.0690755 0 0 1
+        #dynamic_affine  LeftHip
+          #static_affine  0.443611 -0.885044 -0.14109 0 0.697311 0.439746 -0.566022 0 0.562998 0.15271 0.812227 0 0 0 0 1
+            #shape_list_begin
+              #ray_file_instance  1
+              #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 -0.451913 0 1
+                #dynamic_affine  LeftKnee
+                  #static_affine  0.443611 -0.885044 -0.14109 0 0.697311 0.439746 -0.566022 0 0.562998 0.15271 0.812227 0 0 0 0 1
+                    #shape_list_begin
+                      #ray_file_instance  2
+                      #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 -0.476089 0 1
+                        #dynamic_affine  LeftAnkle
+                          #static_affine  0.443611 -0.885044 -0.14109 0 0.697311 0.439746 -0.566022 0 0.562998 0.15271 0.812227 0 0 0 0 1
+                            #ray_file_instance  3
+                    #shape_list_end
+            #shape_list_end
+    #shape_list_end

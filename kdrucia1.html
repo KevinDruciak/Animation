@@ -1,0 +1,185 @@
+<h4 id="assignment-4-keyframe-animation">Assignment 4: Keyframe Animation</h4>
+<h6 id="kevin-druciak">Kevin Druciak</h6>
+<p>kdrucia1</p>
+<p>Late Days: 0</p>
+<p>MSVC / Visual Studio Community 2017 /  Windows 10</p>
+<h4 id="summary-">Summary:</h4>
+<ul>
+<li>Overall, I am happy about the outcome of this assignment. Unfortunately, I felt quite limited by my inability to efficiently create .ray and .key files to play around with. </li>
+</ul>
+<h4 id="implemented-features-">Implemented Features:</h4>
+<ul>
+<li>all --parameter and --interpolant arguments</li>
+<li>video recording using snapshots and ray traced renders</li>
+</ul>
+<h4 id="unimplemented-features-">Unimplemented Features:</h4>
+<ul>
+<li>camera path spline</li>
+<li>key file merging</li>
+<li>composite motions</li>
+</ul>
+<h4 id="parameterizations-and-interpolation-">Parameterizations and Interpolation:</h4>
+<p>Here I have generated a 100 frame, 20 fps gif for each of the possible combinations and parameterizations and interpolations. The row labels are as follows:</p>
+<ul>
+<li><code>1</code>: Rotations are represented by 3x3 matrices, the matrices are blended, and the blended transformation (not necessarily rotation) is returned.</li>
+<li><code>2</code>: Rotations are represented by 3x3 matrices, the matrices are blended, and the closest rotation to the blended transformation is returned.</li>
+<li><code>3</code>: Rotations are represented by Euler angles, the Euler angles are blended, and the rotation described by the blended Euler angles is returned.</li>
+<li><code>4</code>: Rotations are represented by skew-symmetric matrices, the skew-symmetric matrices are blended, and the exponential of the blended skew-symmetric matrix is returned.</li>
+<li><code>5</code>: Rotations are represented by quaternions, the quaternions are blended, and the rotation described by the normalized blended quaternion is returned.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">Nearest Point Interpolation</th>
+<th style="text-align:center">Linear Interpolation</th>
+<th style="text-align:center">Catmull-Rom Interpolation</th>
+<th>Uniform Cubic B-spline Approx.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>1</strong></td>
+<td style="text-align:center"><img src="kdrucia1_HTML\act\11.gif" alt="0" style="zoom:50%;" /></td>
+<td style="text-align:center"><img src="kdrucia1_HTML\act\12.gif" alt="0" style="zoom:50%;" /></td>
+<td style="text-align:center"><img src="kdrucia1_HTML\act\13.gif" alt="0" style="zoom:50%;" /></td>
+<td><img src="kdrucia1_HTML\act\14.gif" alt="0" style="zoom:50%;" /></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>2</strong></td>
+<td style="text-align:center"><img src="kdrucia1_HTML\act\21.gif" alt="0" style="zoom:50%;" /></td>
+<td style="text-align:center"><img src="kdrucia1_HTML\act\22.gif" alt="0" style="zoom:50%;" /></td>
+<td style="text-align:center"><img src="kdrucia1_HTML\act\23.gif" alt="0" style="zoom:50%;" /></td>
+<td><img src="kdrucia1_HTML\act\24.gif" alt="0" style="zoom:50%;" /></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>3</strong></td>
+<td style="text-align:center"><img src="kdrucia1_HTML\act\31.gif" alt="0" style="zoom:50%;" /></td>
+<td style="text-align:center"><img src="kdrucia1_HTML\act\32.gif" alt="0" style="zoom:50%;" /></td>
+<td style="text-align:center"><img src="kdrucia1_HTML\act\33.gif" alt="0" style="zoom:50%;" /></td>
+<td><img src="kdrucia1_HTML\act\34.gif" alt="0" style="zoom:50%;" /></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>4</strong></td>
+<td style="text-align:center"><img src="kdrucia1_HTML\act\41.gif" alt="0" style="zoom:50%;" /></td>
+<td style="text-align:center"><img src="kdrucia1_HTML\act\42.gif" alt="0" style="zoom:50%;" /></td>
+<td style="text-align:center"><img src="kdrucia1_HTML\act\43.gif" alt="0" style="zoom:50%;" /></td>
+<td><img src="kdrucia1_HTML\act\44.gif" alt="0" style="zoom:50%;" /></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>5</strong></td>
+<td style="text-align:center"><img src="kdrucia1_HTML\act\51.gif" alt="0" style="zoom:50%;" /></td>
+<td style="text-align:center"><img src="kdrucia1_HTML\act\52.gif" alt="0" style="zoom:50%;" /></td>
+<td style="text-align:center"><img src="kdrucia1_HTML\act\53.gif" alt="0" style="zoom:50%;" /></td>
+<td><img src="kdrucia1_HTML\act\54.gif" alt="0" style="zoom:50%;" /></td>
+</tr>
+</tbody>
+</table>
+<h4 id="modifications-to-original-code-base-">Modifications to original code base:</h4>
+<ul>
+<li><p>I have kept the my code modifications from assignment 3. The ones listed here are in addition to those.</p>
+</li>
+<li><p>bmp.cpp --&gt; void BMPWriteImage(const Image32&amp; img, FILE *fp)</p>
+<ul>
+<li>Whenever I generated a ray-traced video render, the ouput gif was flipped vertically. To fix this, I made I modified this method to draw the Image32 to a bmp flipped if the Image32&#39;s _flip field was true.</li>
+</ul>
+</li>
+<li>image.h<ul>
+<li>In order to check if an image should be flipped I added the boolean field, _flip  and its getter and setter to the Image32 class. </li>
+</ul>
+</li>
+<li>cylinder.h / cylinder.todo.cpp<ul>
+<li>I suppose this isn&#39;t the original code base, but it&#39;s implementation that should have been done in assignment 2. I implemented cylinder intersection since the stick figure model uses a lot of cylinders. Keep in mind that the implementation is pretty rough as its only purpose in this assignment was to make the ray-traced renders look better.</li>
+<li>As such, I changed <em>bool implemented() { return false; }</em> to <em>bool implemented() { return true; }</em>. I also added a helper function, <em>double Cylinder::intersectBase(Ray3D ray, Point3D c) const</em>, to check for intersection with the two bases of the cylinder. </li>
+</ul>
+</li>
+<li>Video Recording:<ul>
+<li>Both Screenshot and Rendered recording is done entirely within window.cpp and window.h. Note that I only support the .bmp file format for outputting video.</li>
+<li>I added the following variables to window.h:<ul>
+<li>static bool Record;<ul>
+<li>tracks if program should be recording screenshots</li>
+</ul>
+</li>
+<li>static Util::Timer RecordingTime;<ul>
+<li>the timer for the recording</li>
+</ul>
+</li>
+<li>static int RecordingFrames;<ul>
+<li>the amount of frames to record</li>
+</ul>
+</li>
+<li>static double RecordingSeconds;<ul>
+<li>the amount of time to record</li>
+</ul>
+</li>
+<li>static double RecordingFrameTime;<ul>
+<li>the time between frames in the recording</li>
+</ul>
+</li>
+<li>static int RecordingCount;<ul>
+<li>the amount of frames recorded</li>
+</ul>
+</li>
+<li>static std::string RecordingFile;<ul>
+<li>the file to output the recording</li>
+</ul>
+</li>
+<li>static bool RecordRayTraced;<ul>
+<li>tracks if program should be recording ray traced renders</li>
+</ul>
+</li>
+<li>static int RecordingrLimit;<ul>
+<li>the recursion limit for the ray traced renders</li>
+</ul>
+</li>
+<li>static double RecordingcutOff;<ul>
+<li>the cut off for the ray traced renders</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Beginning the recordings is done through user input in void <em>Window::KeyboardFunction(unsigned char c, int x, int y)</em><ul>
+<li>Capital G begins screenshot recording</li>
+<li>Capital R begins ray traced recording</li>
+</ul>
+</li>
+<li>Capturing the video is done in <em>void Window::IdleFunction(void)</em><ul>
+<li>The basic algorithm for recording a video within the IdleFunction is to pause the animation, capture a frame, resume the animation, wait for the next frame to capture, and repeat until all of the frames are captured. The difference between screenshot recording and ray traced recording is that one uses the already implemented TakeSnapshot function to capture a frames while the other ray traces the scene. After all the frames have been captured, I turn them into a gif and delete the individual frames.</li>
+<li>gif.h<ul>
+<li>Since I would be creating a lot of videos to demonstrate output, I decided to use an external library (credit to Charlie Tangora, ctangora@gmail.com) to generate gifs from images.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="art-submissions-">Art Submissions:</h4>
+<ul>
+<li><p>As I mentioned in the summary, I felt quite limited by what I could do in terms of animation since it&#39;s hard to create key files without proper software. Keeping that in mind, I decided to generate the transformations randomly using a small script. </p>
+<p><code>import random</code></p>
+<p><code>import math</code></p>
+<p><code>f = open(&quot;out.txt&quot;, &quot;a&quot;)</code></p>
+<p><code>for i in range(60):</code></p>
+<p>  <code>f.write(&quot;1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 &quot;)</code></p>
+<p>  <code>for j in range(99 * 16):</code></p>
+<p>​    <code>f.write(str(random.uniform(-10, 10)))</code></p>
+<p>​    <code>f.write(&quot; &quot;)</code></p>
+<p>  <code>f.write(&quot;\n&quot;)</code></p>
+<p><code>f.close()</code></p>
+<h4 id="video-submission">Video Submission</h4>
+<ul>
+<li>This is a ray traced video of ball100.ray.</li>
+</ul>
+<p><img src="kdrucia1_HTML\kdrucia1.art\kdrucia1.art.4.1.gif" alt=""></p>
+<h4 id="image-submission">Image Submission</h4>
+<ul>
+<li>This is a ray traced closeup of dog100.ray.</li>
+</ul>
+<p><img src="kdrucia1_HTML\kdrucia1.art\kdrucia1.art.4.2.bmp" alt=""></p>
+</li>
+</ul>
+<h4 id="-ray-and-key-file-submissions">.ray and .key File Submissions</h4>
+<ul>
+<li>I submit ball100.key and ball100.ray for this section.</li>
+</ul>

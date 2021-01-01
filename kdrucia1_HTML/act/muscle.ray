@@ -1,0 +1,97 @@
+#camera  0 0.8 -4  0 0 1  0 1 0 0.523
+#light_point  0.2 0.2 0.2  1 1 1  1 1 1  -10 10 10  1 0 0
+#light_dir  0.2 0.2 0.2  0.6 0.6 0.6  0.6 0.6 0.6  0 0 1
+
+#ray_file  ../ray/muscle.pelvis.ray
+#ray_file  ../ray/muscle.upper_leg.ray
+#ray_file  ../ray/muscle.lower_leg.ray
+#ray_file  ../ray/muscle.foot.ray
+#ray_file  ../ray/muscle.chest.ray
+#ray_file  ../ray/muscle.left_shoulder.ray
+#ray_file  ../ray/muscle.upper_arm.ray
+#ray_file  ../ray/muscle.lower_arm.ray
+#ray_file  ../ray/muscle.hand.ray
+#ray_file  ../ray/muscle.right_shoulder.ray
+#ray_file  ../ray/muscle.neck.ray
+#ray_file  ../ray/muscle.head.ray
+#key_file  ../key/webb_backflip.key
+
+#dynamic_affine  ROOT_NATURAL
+  #shape_list_begin
+    #ray_file_instance  0
+    #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 0.160202 -0.0265675 1
+      #dynamic_affine  Chest
+        #shape_list_begin
+          #ray_file_instance  4
+          #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 0.412859 0 1
+            #dynamic_affine  Neck
+              #shape_list_begin
+                #ray_file_instance  10
+                #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 0.0844846 0 1
+                  #dynamic_affine  Head
+                    #ray_file_instance  11
+              #shape_list_end
+          #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 -0.0185972 0.351754 -0.0270988 1
+            #dynamic_affine  RightCollar
+              #shape_list_begin
+                #ray_file_instance  9
+                #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 -0.163124 0 0 1
+                  #dynamic_affine  RightShoulder
+                    #shape_list_begin
+                      #ray_file_instance  6
+                      #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 -0.335813 0 1
+                        #dynamic_affine  RightElbow
+                          #shape_list_begin
+                            #ray_file_instance  7
+                            #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 -0.26 0 1
+                              #dynamic_affine  RightWrist
+                                #ray_file_instance  8
+                          #shape_list_end
+                    #shape_list_end
+              #shape_list_end
+          #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0.0185972 0.351754 -0.0270988 1
+            #dynamic_affine  LeftCollar
+              #shape_list_begin
+                #ray_file_instance  5
+                #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0.163124 0 0 1
+                  #dynamic_affine  LeftShoulder
+                    #shape_list_begin
+                      #ray_file_instance  6
+                      #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 -0.335813 0 1
+                        #dynamic_affine  LeftElbow
+                          #shape_list_begin
+                            #ray_file_instance  7
+                            #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 -0.26 0 1
+                              #dynamic_affine  LeftWrist
+                                #ray_file_instance  8
+                          #shape_list_end
+                    #shape_list_end
+              #shape_list_end
+        #shape_list_end
+    #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 -0.0690755 0 0 1
+      #dynamic_affine  RightHip
+        #shape_list_begin
+          #ray_file_instance  1
+          #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 -0.451913 0 1
+            #dynamic_affine  RightKnee
+              #shape_list_begin
+                #ray_file_instance  2
+                #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 -0.476089 0 1
+                  #dynamic_affine  RightAnkle
+                    #ray_file_instance  3
+              #shape_list_end
+        #shape_list_end
+    #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0.0690755 0 0 1
+      #dynamic_affine  LeftHip
+        #shape_list_begin
+          #ray_file_instance  1
+          #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 -0.451913 0 1
+            #dynamic_affine  LeftKnee
+              #shape_list_begin
+                #ray_file_instance  2
+                #static_affine  1 0 0 0 0 1 0 0 0 0 1 0 0 -0.476089 0 1
+                  #dynamic_affine  LeftAnkle
+                    #ray_file_instance  3
+              #shape_list_end
+        #shape_list_end
+  #shape_list_end

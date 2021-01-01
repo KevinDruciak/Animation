@@ -1,0 +1,26 @@
+#include <cmath>
+#include <Util/exceptions.h>
+#include "box.h"
+#include "scene.h"
+
+using namespace std;
+using namespace Ray;
+using namespace Util;
+
+/////////
+// Box //
+/////////
+Box::Box( void ) : _material(NULL) {}
+
+void Box::_read( istream &stream )
+{
+	if( !( stream >> _materialIndex >> center >> length ) ) THROW( "failed to parse %s" , Directive().c_str() );
+}
+
+void Box::_write( ostream &stream ) const
+{
+	Shape::WriteInset( stream );
+	stream << "#" << Directive() << "  " << _materialIndex << "  " << center << "  " << length;
+}
+
+size_t Box::primitiveNum( void ) const { return 1; }
